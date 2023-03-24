@@ -45,7 +45,6 @@ class MyHomePage extends StatelessWidget {
         children: [
           Text('A random idea in Sinhal:'),
           BigCard(pair: pair),
-          Text(appState.current.asLowerCase),
           ElevatedButton(
             onPressed: () {
               // print('button pressed!');
@@ -69,6 +68,11 @@ class BigCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(pair.asLowerCase);
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Text(pair.asLowerCase),
+      ),
+    );
   }
 }
